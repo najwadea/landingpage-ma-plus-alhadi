@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>MA Plus Al Hadi</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="custom-navbar position-fixed top-0 start-0 w-100 z-3">
+      <div class="custom-container d-flex justify-content-between align-items-center">
+        <!-- Logo Desktop -->
+        <div class="d-none d-md-flex align-items-center logo-nav">
+          <img src="img/icons/logo-ma.png" alt="Logo Sekolah" class="img-fluid" style="height: 56px" />
+        </div>
+
+        <!-- Logo Mobile -->
+        <div class="d-flex d-md-none align-items-center">
+          <img src="img/icons/logo-ma-mobile.svg" alt="Logo Mobile" class="img-fluid" style="height: 40px" />
+        </div>
+
+        <!-- Tombol PPDB & Menu (Desktop) -->
+        <div class="d-none d-md-flex align-items-center gap-4">
+          <a href="#ppdb" class="btn btn-sm fw-semibold fs-6" style="background-color: #f1d9b9; color: #000; border-radius: 100px; line-height: 24px; padding: 14px 32px"> PPDB </a>
+          <button class="btn btn-sm d-flex align-items-center fs-6 fw-semibold" style="background-color: #fff; border-radius: 100px; padding: 14px 32px">
+            <span class="me-2">Menu</span>
+            <img src="img/icons/menu.svg" alt="Menu" class="img-fluid" style="height: 24px" />
+          </button>
+        </div>
+
+        <!-- Tombol Menu (Mobile) -->
+        <button class="btn d-md-none d-flex justify-content-center align-items-center p-0" style="width: 50px; height: 50px; background-color: #fff; border-radius: 50%">
+          <img src="img/icons/menu.svg" alt="Menu" class="img-fluid" style="height: 22px" />
+        </button>
+      </div>
+    </nav>
+
+    <!-- Overlay Menu -->
+    <div id="menuOverlay" class="menu-overlay">
+      <div class="menu-container">
+        <!-- Kiri -->
+        <div class="menu-left">
+          <!-- <img src="img/icons/logo-ma.png" alt="Logo" style="height: 56px;"> -->
+          <div class="d-flex d-md-none align-items-center">
+            <img src="img/icons/logo-ma-hijau.svg" alt="Logo Mobile" class="img-fluid" style="height: 40px; width: 75.03px" />
+          </div>
+          <div class="d-none d-md-flex align-items-center">
+            <img src="img/icons/logo-ma-black.svg" alt="Logo Sekolah" class="img-fluid" style="height: 56px" />
+          </div>
+          <!-- Menu List Desktop -->
+          <ul class="menu-list d-none d-md-block">
+            <!-- Profil -->
+            <li class="menu-item">
+              <span>Profil</span>
+              <ul class="submenu">
+                <li>Visi & Misi</li>
+                <li>Core Value</li>
+                <li>Struktur Organisasi</li>
+                <li>Logo & Brand</li>
+                <li>Guru & Staff</li>
+              </ul>
+            </li>
+
+            <!-- Program -->
+            <li class="menu-item">
+              <span>Program</span>
+              <ul class="submenu">
+                <li>Kelas Bahasa</li>
+                <li>Kelas Kitab</li>
+                <li>Kelas IT</li>
+              </ul>
+            </li>
+
+            <!-- Berita -->
+            <li class="menu-item">
+              <span>Berita</span>
+              <ul class="submenu">
+                <li>Kabar MA Plus Al Hadi</li>
+                <li>Sarana Prasarana</li>
+                <li>Gallery Kegiatan</li>
+              </ul>
+            </li>
+
+            <!-- Ruang Karya -->
+            <li class="menu-item">
+              <span>Ruang Karya</span>
+            </li>
+          </ul>
+
+          <!-- Menu List Mobile -->
+          <ul class="menu-list-2 d-flex d-md-none">
+            <!-- Profil -->
+            <li class="menu-item-2">
+              <span>Profil</span>
+              <ul class="submenu-2">
+                <li>Visi & Misi</li>
+                <li>Core Value</li>
+                <li>Struktur Organisasi</li>
+                <li>Logo & Brand</li>
+                <li>Guru & Staff</li>
+              </ul>
+            </li>
+
+            <!-- Program -->
+            <li class="menu-item-2">
+              <span>Program</span>
+              <ul class="submenu-2">
+                <li>Kelas Bahasa</li>
+                <li>Kelas Kitab</li>
+                <li>Kelas IT</li>
+              </ul>
+            </li>
+
+            <!-- Berita -->
+            <li class="menu-item-2">
+              <span>Berita</span>
+              <ul class="submenu-2">
+                <li>Kabar MA Plus Al Hadi</li>
+                <li>Sarana Prasarana</li>
+                <li>Gallery Kegiatan</li>
+              </ul>
+            </li>
+
+            <!-- Ruang Karya -->
+            <li class="menu-item-2">
+              <span>Ruang Karya</span>
+            </li>
+          </ul>
+
+          <div class="menu-social d-none d-md-flex">
+            <button>
+              <a href="https://www.facebook.com/maplusalhadipadangan" target="_blank"><img src="img/icons/faceboook-black.svg" alt="fb" class="img-fluid" /></a>
+            </button>
+            <button>
+              <a href="https://www.instagram.com/maplusalhadi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="img/icons/instagram-black.svg" alt="ig" class="img-fluid" /></a>
+            </button>
+            <button>
+              <a href="https://www.youtube.com/@MaPlusAlHadiPadangan" target="_blank"><img src="img/icons/youtube-black.svg" alt="yt" class="img-fluid" /></a>
+            </button>
+            <button>
+              <a href="https://www.tiktok.com/@maplusalhadi" target="_blank"><img src="img/icons/tiktok-black.svg" alt="tt" class="img-fluid" /></a>
+            </button>
+          </div>
+        </div>
+
+        <!-- Kanan -->
+        <div class="menu-right">
+          <button id="closeMenu" class="btn btn-light rounded-pill mb-4 fw-semibold d-none d-md-flex align-items-center ms-auto" style="padding: 14px 32px; width: auto">
+            <span>Keluar</span>
+
+            <img src="img/icons/close-circle.png" alt="close-circle" class="img-fluid" style="height: 24px; margin-left: 8px" />
+          </button>
+
+          <button id="closeMenu-2" class="btn btn-light rounded-pill mb-4 fw-semibold d-flex d-md-none align-items-center ms-auto">
+            <img src="img/icons/close-circle.png" alt="close-circle" class="img-fluid" style="height: 24px" />
+          </button>
+
+          <div class="info-block" style="margin-top: 350px">
+            <div class="info-row" style="margin-bottom: 40px">
+              <div class="info-label">Address</div>
+              <div class="info-text">
+                Jl. Dr. Soetomo Gang 3, Pengkok,<br />
+                Padangan, Bojonegoro<br class="keep-br" />
+                Jawa Timur - Indonesia, 62162
+              </div>
+            </div>
+
+            <div class="info-row">
+              <div class="info-label">Contact</div>
+              <div class="info-text">
+                +62 867 4938 2398<br />
+                (0334) 845 544
+              </div>
+            </div>
+          </div>
+
+          <a href="#ppdb" class="button-ppdb btn fw-bold">PPDB</a>
+
+          <div class="menu-social-2 d-flex d-md-none">
+            <button>
+              <a href="https://www.facebook.com/maplusalhadipadangan" target="_blank"><img src="img/icons/facebook.svg" alt="fb" class="img-fluid" /></a>
+            </button>
+            <button>
+              <a href="https://www.instagram.com/maplusalhadi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="img/icons/instagram.svg" alt="ig" class="img-fluid" /></a>
+            </button>
+            <button>
+              <a href="https://www.youtube.com/@MaPlusAlHadiPadangan" target="_blank"><img src="img/icons/youtube.svg" alt="yt" class="img-fluid" /></a>
+            </button>
+            <button>
+              <a href="https://www.tiktok.com/@maplusalhadi" target="_blank"><img src="img/icons/tiktok.svg" alt="tt" class="img-fluid" /></a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="position-relative">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
+        <!-- Slides -->
+        <div class="carousel-inner">
+          <div class="carousel-item active" style="background-image: url('img/hero/hero-1.jpg')"></div>
+          <div class="carousel-item" style="background-image: url('img/hero/hero-2.jpg')"></div>
+          <div class="carousel-item" style="background-image: url('img/hero/hero-3.jpg')"></div>
+        </div>
+
+        <!-- Overlay absolute -->
+        <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100">
+          <div class="custom-container h-100">
+            <div class="hero-grid h-100">
+
+              <div class="hero-title">
+                <p class="fw-bold">The Right Choice<br />to Get Excellent</p>
+              </div>
+
+              <div class="hero-right">
+                <div class="slide-number fw-bold d-flex align-items-center">
+                  <span id="currentSlide">01</span>
+                  <span class="divider">/</span>
+                  <span id="totalSlide">03</span>
+                </div>
+
+                <div class="news-pill">
+                  <img src="img/hero/berita-voli.jpg" alt="" class="news-thumb" class="img-fluid" style="width: 160px; height: 100px" />
+                  <div class="news-text fw-bold">
+                    MA Plus Al Hadi raih juara <br />
+                    3 dalam turnamen volly ...
+                  </div>
+                  <div class="arrow-circle"><img src="img/icons/arrow-circle.svg" alt="arrow-circle" class="img-fluid" /></div>
+                </div>
+              </div>
+
+
+              <div class="hero-social">
+                <button>
+                  <a href="https://www.facebook.com/maplusalhadipadangan" target="_blank"><img src="img/icons/facebook.svg" alt="Facebook" class="img-fluid" style="width: 20px; height: 20px" /></a>
+                </button>
+                <button>
+                  <a href="https://www.instagram.com/maplusalhadi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="img/icons/instagram.svg" alt="Instagram" class="img-fluid" style="width: 20px; height: 20px" /></a>
+                </button>
+                <button>
+                  <a href="https://www.youtube.com/@MaPlusAlHadiPadangan" target="_blank"><img src="img/icons/youtube.svg" alt="YouTube" class="img-fluid" style="width: 20px; height: 20px" /></a>
+                </button>
+                <button>
+                  <a href="https://www.tiktok.com/@maplusalhadi" target="_blank"><img src="img/icons/tiktok.svg" alt="TikTok" class="img-fluid" style="width: 20px; height: 20px" /></a>
+                </button>
+              </div>
+
+            
+              <div class="hero-desc fw-medium">
+                Mendorong terbentuknya lembaga pendidikan sebagai pusat pembinaan <br />
+                generasi islami yang berakhlakul karimah dan berprestasi pada tingkat <br />
+                internasional
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="news-mobile d-block d-md-none py-4" style="background-color: #121416">
+      <div class="custom-container">
+        <div class="card shadow-sm border-0">
+          <div class="card-img-wrapper">
+            <img src="img/hero/berita-voli.jpg" class="card-img-top" class="img-fluid" alt="Berita" />
+          </div>
+          <div class="card-body">
+            <p class="fw-bold" style="font-size: 20px">MA Plus Al Hadi raih juara 3 dalam turnamen volly ...</p>
+            <a href="#" class="stretched-link">
+              <img src="img/icons/arrow-circle.svg" alt="arrow" class="img-fluid" style="width: 24px; height: 24px" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="custom-container custom-container-2 d-flex flex-column flex-md-row align-items-start about-wrapper">
+        <!-- Judul -->
+        <div class="about-title">
+          <h2 class="fw-bold">Tentang kami</h2>
+        </div>
+
+        <!-- Isi -->
+        <div class="about-content">
+          <p>
+            MA Plus Al Hadi adalah sebuah Madrasah Aliyah yang mengintegrasikan dan mengkombinasikan ilmu pengetahuan (science) dengan nilai-nilai agama dalam setiap aspek pendidikan. Dengan pendekatan ini, MA Plus AL Hadi berupaya mencetak
+            generasi muda yang tidak hanya cerdas dalam bidang akademik, tetap juga memiliki pemahaman yang mendalam terhadap ajaran agama. Kurikulum yang disusun menggabungkan pembelajaran sains modern dengan pengajaran agama yang berbasis
+            pada akhlak mulia, sehingga siswa dapat berkembang secara holistik—baik dalam ilmu pengetahuan maupun dalam akhlak dan moralitas.
+          </p>
+
+          <a href="#" class="btn d-inline-flex align-items-center">
+            Baca selengkapnya
+            <img src="img/icons/arrow-circle-right.svg" class="img-fluid" alt="arrow" style="height: 20px" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="core-value">
+      <div class="custom-container custom-container-2">
+        <h6>Our Core Value</h6>
+        <hr />
+
+        <div class="row gx-0 align-items-center">
+          <!-- Logo -->
+          <div class="col-12 col-md-4 mb-4 mb-md-0 text-md-start">
+            <img src="img/icons/logo-ma-1.svg" alt="Smart School Logo" class="img-fluid" />
+          </div>
+
+          <!-- Core Value -->
+          <div class="col-12 col-md-8">
+            <div class="d-flex flex-wrap buttons justify-content-md-start">
+              <button class="btn rounded-pill">Spiritual</button>
+              <button class="btn rounded-pill">Multilanguage</button>
+              <button class="btn rounded-pill">Attitude</button>
+              <button class="button-2 btn rounded-pill">Research</button>
+              <button class="button-2 btn rounded-pill">Technopreneurship</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="fasilitas" class="bg-dark text-white">
+      <div class="custom-container custom-container-2 custom-fasilitas">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-end mb-5">
+          <div>
+            <h3 class="fw-bold">Fasilitas</h3>
+            <p class="mb-0" style="color: #d0d5dd">Mendukung pengalaman belajar yang kondusif dan nyaman.</p>
+          </div>
+          <a href="#" class="lihat-selengkapnya d-none d-md-block">Lihat selengkapnya</a>
+        </div>
+
+        <!-- Wrapper -->
+        <div class="fasilitas-wrapper position-relative">
+          <!-- Track -->
+          <div class="fasilitas-track d-flex transition">
+            <!-- Card 1 -->
+            <div class="fasilitas-card">
+              <div class="position-relative">
+                <img src="img/fasilitas/gedung-pendidikan.jpg" alt="Gedung Pendidikan" class="img-fluid"/>
+                <div class="icon-info">
+                  <img src="img/icons/photo.svg" alt="photo" class="img-fluid"/>
+                  <span>1</span>
+                </div>
+              </div>
+              <h6 class="mt-2">Gedung Pendidikan</h6>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="fasilitas-card">
+              <div class="position-relative">
+                <img src="img/fasilitas/asrama.png" alt="Asrama Santri" class="img-fluid"/>
+                <div class="icon-info">
+                  <img src="img/icons/photo.svg" alt="photo" class="img-fluid"/>
+                  <span>2</span>
+                </div>
+              </div>
+              <h6 class="mt-2">Asrama Santri</h6>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="fasilitas-card position-relative">
+              <div class="position-relative">
+                <img src="img/fasilitas/perpustakaan.jpg" alt="Perpustakaan" class="img-fluid"/>
+                <div class="icon-info">
+                  <img src="img/icons/photo.svg" alt="photo" />
+                  <span>3</span>
+                </div>
+
+                <!-- Tombol next -->
+                <img src="img/icons/navigasi-fasilitas-right.svg" alt="next" class="icon-next d-none d-md-block img-fluid" />
+              </div>
+              <h6 class="mt-2">Perpustakaan</h6>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="fasilitas-card">
+              <div class="position-relative">
+                <img src="img/fasilitas/perpustakaan.jpg" alt="Perpustakaan" class="img-fluid"/>
+                <div class="icon-info">
+                  <img src="img/icons/photo.svg" alt="photo" />
+                  <span>4</span>
+                </div>
+                <img src="img/icons/navigasi-fasilitas-left.png" alt="prev" class="icon-prev d-none d-md-block img-fluid" />
+              </div>
+              <h6 class="mt-2">Laboratorium Komputer</h6>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="fasilitas-card">
+              <div class="position-relative">
+                <img src="img/fasilitas/masjid.jpg" alt="Masjid" class="img-fluid"/>
+                <div class="icon-info">
+                  <img src="img/icons/photo.svg" alt="photo" />
+                  <span>5</span>
+                </div>
+              </div>
+              <h6 class="mt-2">Masjid</h6>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="fasilitas-card">
+              <div class="position-relative">
+                <img src="img/fasilitas/gedung-serbaguna.jpg" alt="Lapangan Olahraga" class="img-fluid"/>
+                <div class="icon-info">
+                  <img src="img/icons/photo.svg" alt="photo" />
+                  <span>6</span>
+                </div>
+              </div>
+              <h6 class="mt-2">Lapangan Olahraga</h6>
+            </div>
+          </div>
+          <img src="img/icons/navigasi-fasilitas-left.png" alt="prev" class="icon-prev-m d-none d-md-none img-fluid" />
+          <img src="img/icons/navigasi-fasilitas-right.svg" alt="next" class="icon-next-m d-block d-md-none img-fluid" />
+          <div class="text-center d-block d-md-none mt-3" style="margin-bottom: 40px">
+            <a href="#" class="lihat-selengkapnya">Lihat selengkapnya</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="program-section" style="background-color: #f2f4f7">
+      <div class="custom-container custom-container-2">
+        <h2 class="fw-bold mb-5" style="color: #121416">Program Unggulan</h2>
+
+        <!-- Card 1 -->
+        <div class="program-card d-flex align-items-center justify-content-between">
+          <img src="img/program/kelas-bahasa.jpg" alt="Program Bahasa" class="program-img img-fluid" />
+          <div class="program-body d-flex align-items-center justify-content-between">
+            <div class="program-text">
+              <p class="program-label" style="margin-bottom: 0">Program Unggulan</p>
+              <h2 class="fw-bold mb-0 program-title">Kelas Bahasa</h2>
+            </div>
+            <button class="btn-program">
+              <img src="img/icons/next.svg" alt="Next" class="program-arrow img-fluid" />
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="program-card d-flex align-items-center justify-content-between">
+          <img src="img/program/kelas-kitab.jpg" alt="Program Kitab" class="program-img img-fluid" />
+          <div class="program-body d-flex align-items-center justify-content-between">
+            <div class="program-text">
+              <p class="program-label" style="margin-bottom: 0">Program Unggulan</p>
+              <h2 class="fw-bold mb-0 program-title">Kelas Kitab</h2>
+            </div>
+            <button class="btn-program">
+              <img src="img/icons/next.svg" alt="Next" class="program-arrow img-fluid" />
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="program-card program-card-3 d-flex align-items-center justify-content-between">
+          <img src="img/program/kelas-it.jpg" alt="Program IT" class="program-img img-fluid" />
+          <div class="program-body d-flex align-items-center justify-content-between">
+            <div class="program-text">
+              <p class="program-label" style="margin-bottom: 0">Program Unggulan</p>
+              <h2 class="fw-bold mb-0 program-title">Kelas IT</h2>
+            </div>
+            <button class="btn-program">
+              <img src="img/icons/next.svg" alt="Next" class="program-arrow img-fluid" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="berita-aktivitas">
+      <div class="custom-container custom-container-2 container-fluid">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-5 judul">
+          <h3 class="fs-2 fw-bold mb-0">Berita & Aktivitas</h3>
+          <a href="#" class="link-primary text-decoration-none d-none d-md-inline" style="font-weight: 600">Lihat selengkapnya</a>
+        </div>
+
+        <div class="row g-4">
+          <!-- Kolom 1 -->
+          <div class="col-12 col-lg-4">
+            <article class="position-relative rounded-news overflow-hidden shadow-sm h-100">
+              <img src="img/berita/berita-1.jpg" class="w-100 h-100 object-fit-cover card-potrait img-fluid" alt="cover" />
+              <!-- Overlay -->
+              <div class="position-absolute bottom-0 start-0 w-100 news-overlay text-white p-3">
+                <h3 class="h5 mb-2" style="color: #fcfcfd">Wisuda Angkatan ke-3 MA Plus Al Hadi Bojonegoro</h3>
+                <div class="d-flex align-items-center gap-2 news-item" style="color: #e4e7ec; font-weight: 400">
+                  <span>Kabar Al-Hadi</span>
+                  <span>•</span>
+                  <span>27 Juni, 2024</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Kolom 2 -->
+          <div class="col-12 col-lg-4 d-grid gap-4">
+            <article class="position-relative rounded-news overflow-hidden shadow-sm h-100">
+              <img src="img/berita/berita-2.jpg" class="w-100 h-100 object-fit-cover card-landscape img-fluid" alt="" />
+              <div class="position-absolute bottom-0 start-0 w-100 news-overlay text-white p-3">
+                <h3 class="h5 mb-2" style="color: #fcfcfd">Pelantikan Anggota OSIM Baru MA Plus Al Hadi</h3>
+                <div class="d-flex align-items-center gap-2 news-item" style="color: #e4e7ec; font-weight: 400">
+                  <span>Kabar Al-Hadi</span>
+                  <span>•</span>
+                  <span>27 Juni, 2024</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="position-relative rounded-news overflow-hidden shadow-sm h-100">
+              <img src="img/berita/berita-3.jpg" class="w-100 h-100 object-fit-cover card-landscape img-fluid" alt="" />
+              <div class="position-absolute bottom-0 start-0 w-100 news-overlay text-white p-3">
+                <h3 class="h5 mb-2" style="color: #fcfcfd">Good public speaking, bermental pemimpin</h3>
+                <div class="d-flex align-items-center gap-2 news-item" style="color: #e4e7ec; font-weight: 400">
+                  <span>Prestasi</span>
+                  <span>•</span>
+                  <span>27 Juni, 2024</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Kolom 3 -->
+          <div class="col-12 col-lg-4">
+            <div class="d-flex flex-column gap-4">
+              <a href="#" class="d-flex text-decoration-none text-dark">
+                <div class="flex-shrink-0" style="width: 120px">
+                  <div class="ratio ratio-1x1">
+                    <img src="img/berita/berita-4.jpg" class="w-100 h-100 rounded-news object-fit-cover img-fluid" alt="" />
+                  </div>
+                </div>
+                <div class="flex-grow-1 ps-4 d-flex align-items-center">
+                  <div>
+                    <h5 class="mb-2 fw-bold" style="color: #101828">Masa ta’aruf santri madrasah (MATSAMA) MA Plus Al Hadi Tahun...</h5>
+                    <div class="d-flex align-items-center gap-2 news-item" style="color: #667085; font-weight: 400">
+                      <span>Kabar Al-Hadi</span>
+                      <span>•</span>
+                      <span>27 Juni, 2024</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="d-flex text-decoration-none text-dark">
+                <div class="flex-shrink-0" style="width: 120px">
+                  <div class="ratio ratio-1x1">
+                    <img src="img/berita/berita-5.jpg" class="w-100 h-100 rounded-news object-fit-cover img-fluid" alt="" />
+                  </div>
+                </div>
+                <div class="flex-grow-1 ps-4 d-flex align-items-center">
+                  <div>
+                    <h5 class="mb-2 fw-bold" style="color: #101828">Good Public Speaking, bermental pemimpin</h5>
+                    <div class="d-flex align-items-center gap-2 news-item" style="color: #667085; font-weight: 400">
+                      <span>Kabar Al-Hadi</span>
+                      <span>•</span>
+                      <span>27 Juni, 2024</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="d-flex text-decoration-none text-dark">
+                <div class="flex-shrink-0" style="width: 120px">
+                  <div class="ratio ratio-1x1">
+                    <img src="img/berita/berita-6.jpg" class="w-100 h-100 rounded-news object-fit-cover img-fluid" alt="" />
+                  </div>
+                </div>
+                <div class="flex-grow-1 ps-4 d-flex align-items-center">
+                  <div>
+                    <h5 class="mb-2 fw-bold" style="color: #101828">Tim Futsal Putra Juara 2 turnamen Futsal PAC NU Padangan</h5>
+                    <div class="d-flex align-items-center gap-2 news-item" style="color: #667085; font-weight: 400">
+                      <span>Kabar Al-Hadi</span>
+                      <span>•</span>
+                      <span>27 Juni, 2024</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+
+              <a href="#" class="d-flex text-decoration-none text-dark">
+                <div class="flex-shrink-0" style="width: 120px">
+                  <div class="ratio ratio-1x1">
+                    <img src="img/berita/berita-7.jpg" class="w-100 h-100 rounded-news object-fit-cover img-fluid" alt="" />
+                  </div>
+                </div>
+                <div class="flex-grow-1 ps-4 d-flex align-items-center">
+                  <div>
+                    <h5 class="mb-2 fw-bold" style="color: #101828">MA Plus Al Hadi Juara 2 Catur PORSENI Tingkat Kabupaten</h5>
+                    <div class="d-flex align-items-center gap-2 news-item" style="color: #667085; font-weight: 400">
+                      <span>Kabar Al-Hadi</span>
+                      <span>•</span>
+                      <span>27 Juni, 2024</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="link-primary text-decoration-none d-block d-md-none text-center" style="font-weight: 600; margin-top: 24px"> Lihat selengkapnya </a>
+      </div>
+    </section>
+
+    <section class="custom-container custom-container-2">
+      <div class="cta-section">
+        <div class="cta-content">
+          <div class="cta-badge mb-2">PPDB</div>
+          <h1 class="cta-title mb-3">Jadi Santri MA Plus Al Hadi Sekarang Juga!</h1>
+          <p class="cta-description mb-0">Membangun generasi unggul, mandiri dan berakhlakul karimah</p>
+        </div>
+        <div class="cta-action">
+          <a href="#" class="cta-button fw-bold">Daftar Sekarang</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="custom-container">
+        <div class="footer-top">
+          <!-- Kiri -->
+          <div class="footer-left">
+            <img src="img/icons/logo-ma.png" alt="Logo Sekolah" class="footer-logo img-fluid" />
+
+            <div class="footer-info-1">
+              <span class="footer-label">Address</span>
+              <span class="footer-text">
+                Jl. Dr. Soetomo Gang 3, Pengkok, Padangan, Bojonegoro <br />
+                Jawa Timur - Indonesia, 62162
+              </span>
+            </div>
+
+            <div class="footer-info-2">
+              <span class="footer-label">Contact</span>
+              <span class="footer-text">
+                +62 867 4938 2398 <br />
+                (0334) 845 544
+              </span>
+            </div>
+          </div>
+
+          <!-- Kanan -->
+          <div class="footer-right">
+            <p class="footer-info-text">For more information</p>
+            <a href="https://wa.me/6286749382398" class="footer-btn">
+              <img src="img/icons/whatsapp.svg" alt="WhatsApp" class="icon-wa img-fluid" />
+              Kontak Kami
+            </a>
+
+            <div class="footer-social">
+              <a href="https://www.facebook.com/maplusalhadipadangan" target="_blank"><img src="img/icons/facebook.svg" alt="Facebook" class="img-fluid"/></a>
+              <a href="https://www.instagram.com/maplusalhadi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="img/icons/instagram.svg" alt="Instagram" class="img-fluid"/></a>
+              <a href="https://www.youtube.com/@MaPlusAlHadiPadangan" target="_blank"><img src="img/icons/youtube.svg" alt="YouTube" class="img-fluid"/></a>
+              <a href="https://www.tiktok.com/@maplusalhadi" target="_blank"><img src="img/icons/tiktok.svg" alt="TikTok" class="img-fluid"/></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bawah -->
+      <div class="footer-bottom">©2024 Copyrights MA Plus Alhadi</div>
+    </footer>
+
+    <script>
+      const navbar = document.querySelector(".custom-navbar");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+    </script>
+
+    <script>
+      const currentSlide = document.getElementById("currentSlide");
+      const totalSlide = document.getElementById("totalSlide");
+      const heroCarousel = document.getElementById("heroCarousel"); // id carousel
+
+      // total slide otomatis
+      totalSlide.textContent = document.querySelectorAll("#heroCarousel .carousel-item").length.toString().padStart(2, "0");
+
+      // update current saat slide berubah
+      heroCarousel.addEventListener("slid.bs.carousel", function (event) {
+        let index = event.to + 1; // index mulai dari 0
+        currentSlide.textContent = index.toString().padStart(2, "0");
+      });
+    </script>
+
+    <script>
+      const menuBtn = document.querySelectorAll(".custom-navbar button");
+      const menuOverlay = document.getElementById("menuOverlay");
+      const closeBtn = document.getElementById("closeMenu");
+      const closeBtnn = document.getElementById("closeMenu-2");
+      const menuItems = document.querySelectorAll(".menu-item"); // Desktop
+      const menuItems2 = document.querySelectorAll(".menu-item-2"); // Mobile
+
+      // Buka menu
+      menuBtn.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          menuOverlay.style.display = "block";
+        });
+      });
+
+      // Tutup menu
+      closeBtn.addEventListener("click", () => {
+        menuOverlay.style.display = "none";
+      });
+
+      closeBtnn.addEventListener("click", () => {
+        menuOverlay.style.display = "none";
+      });
+
+      // Toggle submenu Desktop
+      menuItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          if (item.classList.contains("active")) {
+            item.classList.remove("active"); // tutup jika diklik lagi
+          } else {
+            menuItems.forEach((i) => i.classList.remove("active")); // tutup yg lain
+            item.classList.add("active"); // buka yg diklik
+          }
+        });
+      });
+
+      // Toggle submenu Mobile (vertical)
+      menuItems2.forEach((item) => {
+        item.addEventListener("click", () => {
+          if (item.classList.contains("active")) {
+            item.classList.remove("active"); // tutup jika diklik lagi
+          } else {
+            menuItems2.forEach((i) => i.classList.remove("active")); // tutup yg lain
+            item.classList.add("active"); // buka yg diklik
+          }
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const track = document.querySelector(".fasilitas-track");
+        const btnNext = document.querySelector(".icon-next"); // desktop next
+        const btnPrev = document.querySelector(".icon-prev"); // desktop prev
+        const btnNextM = document.querySelector(".icon-next-m"); // mobile next
+        const btnPrevM = document.querySelector(".icon-prev-m"); // mobile prev
+
+        const cards = document.querySelectorAll(".fasilitas-card");
+        if (!track || cards.length === 0) return;
+
+        let position = 0;
+
+        // ukuran card
+        const cardWidth = 378.67 + 32; // desktop: width + gap
+        const cardWidthMobile = 268.83 + 22.72; // mobile: width + gap
+        const visibleCards = 3; // desktop
+        const totalCards = cards.length;
+
+        // --- DESKTOP NEXT (geser 3 card) ---
+        if (btnNext) {
+          btnNext.addEventListener("click", () => {
+            const maxShift = -(cardWidth * (totalCards - visibleCards));
+            if (position > maxShift) {
+              position -= cardWidth * 3;
+              if (position < maxShift) position = maxShift;
+              track.style.transform = `translateX(${position}px)`;
+            }
+          });
+        }
+
+        // --- DESKTOP PREV (geser 3 card) ---
+        if (btnPrev) {
+          btnPrev.addEventListener("click", () => {
+            if (position < 0) {
+              position += cardWidth * 3;
+              if (position > 0) position = 0;
+              track.style.transform = `translateX(${position}px)`;
+            }
+          });
+        }
+
+        // --- MOBILE NEXT (geser 1 card) ---
+        if (btnNextM) {
+          btnNextM.addEventListener("click", () => {
+            const maxShift = -(cardWidthMobile * (totalCards - 1));
+            if (position > maxShift) {
+              position -= cardWidthMobile;
+              if (position < maxShift) position = maxShift;
+              track.style.transform = `translateX(${position}px)`;
+            }
+
+            // munculkan tombol prev kalau sudah geser
+            if (position < 0 && btnPrevM) {
+              btnPrevM.classList.remove("d-none");
+            }
+          });
+        }
+
+        // --- MOBILE PREV (geser 1 card) ---
+        if (btnPrevM) {
+          btnPrevM.addEventListener("click", () => {
+            if (position < 0) {
+              position += cardWidthMobile;
+              if (position > 0) position = 0;
+              track.style.transform = `translateX(${position}px)`;
+            }
+
+            // sembunyikan lagi kalau sudah balik ke card pertama
+            if (position === 0) {
+              btnPrevM.classList.add("d-none");
+            }
+          });
+        }
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
