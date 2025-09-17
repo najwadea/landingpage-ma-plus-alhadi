@@ -197,68 +197,120 @@
     </div>
 
     <!-- Hero Section -->
-    <section id="hero" class="position-relative">
-      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="6000">
-        <!-- Slides -->
-        <div class="carousel-inner">
-          <div class="carousel-item active" style="background-image: url('img/hero/hero-1.jpg')"></div>
-          <div class="carousel-item" style="background-image: url('img/hero/hero-2.jpg')"></div>
-          <div class="carousel-item" style="background-image: url('img/hero/hero-3.jpg')"></div>
+<section id="hero" class="relative"
+  x-data="{
+    activeSlide: 0,
+    prevSlide: null,
+    isAnimating: false,
+    isFirstLoad: true,
+    slides: [
+      { id: 1, image: 'img/hero/hero-1.jpg' },
+      { id: 2, image: 'img/hero/hero-2.jpg' },
+      { id: 3, image: 'img/hero/hero-3.jpg' }
+    ],
+    next() {
+      if (this.isAnimating) return;
+      this.isAnimating = true;
+      this.prevSlide = this.activeSlide;
+      this.activeSlide = (this.activeSlide + 1) % this.slides.length;
+      this.isFirstLoad = false;
+      setTimeout(() => { this.isAnimating = false }, 600); // lock animasi
+    },
+    getCurrentNumber() {
+      return String(this.activeSlide + 1).padStart(2, '0');
+    },
+    getTotalNumber() {
+      return String(this.slides.length).padStart(2, '0');
+    },
+    startAutoplay() {
+      setInterval(() => { this.next(); }, 6000);
+    }
+  }"
+  x-init="startAutoplay()"
+>
+  <!-- Slideshow -->
+  <div class="absolute inset-0 w-full h-full overflow-hidden">
+    <template x-for="(slide, index) in slides" :key="slide.id">
+      <div 
+        x-show="activeSlide === index"
+        x-transition:enter="transition-opacity ease-out duration-1000"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition-opacity ease-in duration-700 absolute"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+        class="absolute inset-0 hero-slide"
+        :style="{ backgroundImage: 'url(' + slide.image + ')' }">
+      </div>
+    </template>
+  </div>
+
+  <!-- Overlay -->
+  <div class="hero-overlay absolute top-0 left-0 w-full h-full">
+    <div class="custom-container h-100">
+      <div class="hero-grid h-100">
+
+        <!-- Title -->
+        <div class="hero-title">
+          <p class="fw-bold">The Right Choice<br />to Get Excellent</p>
         </div>
 
-        <!-- Overlay absolute -->
-        <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100">
-          <div class="custom-container h-100">
-            <div class="hero-grid h-100">
+        <!-- Right Section -->
+        <div class="hero-right">
+          <!-- Nomor slide -->
+          <div class="slide-number fw-bold d-flex align-items-center relative overflow-hidden">
+            <!-- Angka current -->
+            <template x-for="(slide, index) in slides" :key="slide.id + '-num'">
+              <span 
+                x-show="activeSlide === index"
+                x-text="String(index+1).padStart(2,'0')"
+                class="current-number"
+                :class="{
+                  'animate-in': !isFirstLoad && activeSlide === index && prevSlide !== index,
+                  'animate-out': !isFirstLoad && prevSlide === index
+                }"
+              ></span>
+            </template>
 
-              <div class="hero-title">
-                <p class="fw-bold">The Right Choice<br />to Get Excellent</p>
-              </div>
+            <!-- Divider -->
+            <span class="divider">/</span>
 
-              <div class="hero-right">
-                <div class="slide-number fw-bold d-flex align-items-center">
-                  <span id="currentSlide">01</span>
-                  <span class="divider">/</span>
-                  <span id="totalSlide">03</span>
-                </div>
+            <!-- Total -->
+            <span class="total-number" x-text="getTotalNumber()"></span>
+          </div>
 
-                <div class="news-pill">
-                  <img src="img/hero/berita-voli.jpg" alt="" class="news-thumb" class="img-fluid" style="width: 160px; height: 100px" />
-                  <div class="news-text fw-bold">
-                    MA Plus Al Hadi raih juara <br />
-                    3 dalam turnamen volly ...
-                  </div>
-                  <div class="arrow-circle"><img src="img/icons/arrow-circle.svg" alt="arrow-circle" class="img-fluid" /></div>
-                </div>
-              </div>
-
-
-              <div class="hero-social">
-                <button>
-                  <a href="https://www.facebook.com/maplusalhadipadangan" target="_blank"><img src="img/icons/facebook.svg" alt="Facebook" class="img-fluid" style="width: 20px; height: 20px" /></a>
-                </button>
-                <button>
-                  <a href="https://www.instagram.com/maplusalhadi?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="img/icons/instagram.svg" alt="Instagram" class="img-fluid" style="width: 20px; height: 20px" /></a>
-                </button>
-                <button>
-                  <a href="https://www.youtube.com/@MaPlusAlHadiPadangan" target="_blank"><img src="img/icons/youtube.svg" alt="YouTube" class="img-fluid" style="width: 20px; height: 20px" /></a>
-                </button>
-                <button>
-                  <a href="https://www.tiktok.com/@maplusalhadi" target="_blank"><img src="img/icons/tiktok.svg" alt="TikTok" class="img-fluid" style="width: 20px; height: 20px" /></a>
-                </button>
-              </div>
-
-            
-              <div class="hero-desc fw-medium">
-                Mendorong terbentuknya lembaga pendidikan sebagai pusat pembinaan <br />
-                generasi islami yang berakhlakul karimah dan berprestasi pada tingkat <br />
-                internasional
-              </div>
+          <!-- News pill -->
+          <div class="news-pill">
+            <img src="img/hero/berita-voli.jpg" alt="" class="news-thumb" style="width: 160px; height: 100px" />
+            <div class="news-text fw-bold">
+              MA Plus Al Hadi raih juara <br />
+              3 dalam turnamen volly ...
+            </div>
+            <div class="arrow-circle">
+              <img src="img/icons/arrow-circle.svg" alt="arrow-circle" />
             </div>
           </div>
         </div>
+
+        <!-- Sosmed -->
+        <div class="hero-social">
+          <button><a href="#"><img src="img/icons/facebook.svg" alt="Facebook" style="width: 20px; height: 20px" /></a></button>
+          <button><a href="https://www.instagram.com/maplusalhadi" target="_blank"><img src="img/icons/instagram.svg" alt="Instagram" style="width: 20px; height: 20px" /></a></button>
+          <button><a href="https://www.youtube.com/@MaPlusAlHadiPadangan" target="_blank"><img src="img/icons/youtube.svg" alt="YouTube" style="width: 20px; height: 20px" /></a></button>
+          <button><a href="https://www.tiktok.com/@maplusalhadi" target="_blank"><img src="img/icons/tiktok.svg" alt="TikTok" style="width: 20px; height: 20px" /></a></button>
+        </div>
+
+        <!-- Deskripsi -->
+        <div class="hero-desc fw-medium">
+          Mendorong terbentuknya lembaga pendidikan sebagai pusat pembinaan <br />
+          generasi islami yang berakhlakul karimah dan berprestasi pada tingkat <br />
+          internasional
+        </div>
+
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <section class="news-mobile d-block d-md-none py-4" style="background-color: #121416">
       <div class="custom-container">
@@ -677,21 +729,6 @@
     </script>
 
     <script>
-      const currentSlide = document.getElementById("currentSlide");
-      const totalSlide = document.getElementById("totalSlide");
-      const heroCarousel = document.getElementById("heroCarousel"); // id carousel
-
-      // total slide otomatis
-      totalSlide.textContent = document.querySelectorAll("#heroCarousel .carousel-item").length.toString().padStart(2, "0");
-
-      // update current saat slide berubah
-      heroCarousel.addEventListener("slid.bs.carousel", function (event) {
-        let index = event.to + 1; // index mulai dari 0
-        currentSlide.textContent = index.toString().padStart(2, "0");
-      });
-    </script>
-
-    <script>
       const menuBtn = document.querySelectorAll(".custom-navbar button");
       const menuOverlay = document.getElementById("menuOverlay");
       const closeBtn = document.getElementById("closeMenu");
@@ -817,6 +854,8 @@
       });
     </script>
 
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
