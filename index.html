@@ -13,7 +13,7 @@
       <div class="custom-container d-flex justify-content-between align-items-center">
         <!-- Logo Desktop -->
         <div class="d-none d-md-flex align-items-center">
-          <img src="img/icons/logo-ma.png" alt="Logo Sekolah" style="height: 56px; max-width: 220.71px;" />
+          <img src="img/icons/logo-ma.png" alt="Logo Sekolah" style="height: 56px; max-width: 220.71px" />
         </div>
 
         <!-- Logo Mobile -->
@@ -23,8 +23,8 @@
 
         <!-- Tombol PPDB & Menu (Desktop) -->
         <div class="d-none d-md-flex align-items-center gap-4">
-          <a href="#ppdb" class="btn btn-sm fw-semibold fs-6" style="background-color: #f1d9b9; color: #000; border-radius: 100px; line-height: 24px; padding: 14px 32px; letter-spacing: -2%;"> PPDB </a>
-          <button class="btn btn-sm d-flex align-items-center fs-6 fw-semibold" style="background-color: #fff; border-radius: 100px; padding: 14px 32px; line-height: 24px; letter-spacing: -2%;">
+          <a href="#ppdb" class="btn btn-sm fw-semibold fs-6" style="background-color: #f1d9b9; color: #000; border-radius: 100px; line-height: 24px; padding: 14px 32px; letter-spacing: -2%"> PPDB </a>
+          <button class="btn btn-sm d-flex align-items-center fs-6 fw-semibold" style="background-color: #fff; border-radius: 100px; padding: 14px 32px; line-height: 24px; letter-spacing: -2%">
             <span class="me-2">Menu</span>
             <img src="img/icons/menu.svg" alt="Menu" style="height: 24px" />
           </button>
@@ -196,8 +196,10 @@
       </div>
     </div>
 
-<section id="hero" class="relative"
-  x-data="{
+    <section
+      id="hero"
+      class="relative"
+      x-data="{
     activeSlide: 0,
     prevSlide: null,
     isAnimating: false,
@@ -225,46 +227,45 @@
       setInterval(() => { this.next(); }, 6000);
     }
   }"
-  x-init="startAutoplay()"
->
-  <!-- Slideshow -->
-  <div class="absolute inset-0 w-full h-full overflow-hidden">
-    <template x-for="(slide, index) in slides" :key="slide.id">
-      <div 
-        x-show="activeSlide === index"
-        x-transition:enter="transition-opacity ease-out duration-1000"
-        x-transition:enter-start="opacity-0"
-        x-transition:enter-end="opacity-100"
-        x-transition:leave="transition-opacity ease-in duration-700 absolute"
-        x-transition:leave-start="opacity-100"
-        x-transition:leave-end="opacity-0"
-        class="absolute inset-0 hero-slide"
-        :style="{ backgroundImage: 'url(' + slide.image + ')' }">
+      x-init="startAutoplay()"
+    >
+      <!-- Slideshow -->
+      <div class="absolute inset-0 w-full h-full overflow-hidden">
+        <template x-for="(slide, index) in slides" :key="slide.id">
+          <div
+            x-show="activeSlide === index"
+            x-transition:enter="transition-opacity ease-out duration-1000"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition-opacity ease-in duration-700 absolute"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            class="absolute inset-0 hero-slide"
+            :style="{ backgroundImage: 'url(' + slide.image + ')' }"
+          ></div>
+        </template>
       </div>
-    </template>
-  </div>
 
-  <!-- Overlay -->
-  <div class="hero-overlay absolute top-0 left-0 w-full h-full">
-    <div class="custom-container h-100">
-      <div class="hero-grid h-100">
+      <!-- Overlay -->
+      <div class="hero-overlay absolute top-0 left-0 w-full h-full">
+        <div class="custom-container h-100">
+          <div class="hero-grid h-100">
+            <!-- Title -->
+            <div class="hero-title">
+              <p class="fw-bold">The Right Choice<br />to Get Excellent</p>
+            </div>
 
-        <!-- Title -->
-        <div class="hero-title">
-          <p class="fw-bold">The Right Choice<br />to Get Excellent</p>
-        </div>
-
-        <!-- Right Section -->
-        <div class="hero-right">
-          <!-- Nomor slide -->
-          <div class="slide-number fw-bold d-flex align-items-center relative overflow-hidden">
-            <div class="number-container">
-              <template x-for="(slide, index) in slides" :key="slide.id + '-num'">
-                <span 
-                  x-show="activeSlide === index"
-                  x-text="String(index+1).padStart(2,'0')"
-                  class="current-number"
-                  :class="{
+            <!-- Right Section -->
+            <div class="hero-right">
+              <!-- Nomor slide -->
+              <div class="slide-number fw-bold d-flex align-items-center relative overflow-hidden">
+                <div class="number-container">
+                  <template x-for="(slide, index) in slides" :key="slide.id + '-num'">
+                    <span
+                      x-show="activeSlide === index"
+                      x-text="String(index+1).padStart(2,'0')"
+                      class="current-number"
+                      :class="{
                     // khusus 03 (index === 2)
                     'animate-in-right': !isFirstLoad && activeSlide === index && prevSlide !== index && index === 2,
                     'animate-out-right': !isFirstLoad && prevSlide === index && index === 2,
@@ -273,51 +274,56 @@
                     'animate-fade-in': !isFirstLoad && activeSlide === index && prevSlide !== index && index !== 2,
                     'animate-fade-out': !isFirstLoad && prevSlide === index && index !== 2
                   }"
-                ></span>
-              </template>
+                    ></span>
+                  </template>
+                </div>
+
+                <!-- Divider -->
+                <span class="divider">/</span>
+
+                <!-- Total -->
+                <span class="total-number" x-text="getTotalNumber()"></span>
+              </div>
+
+              <!-- News pill -->
+              <div class="news-pill">
+                <img src="img/hero/berita-voli.jpg" alt="" class="news-thumb" />
+                <div class="news-text fw-bold" style="letter-spacing: -2%">
+                  MA Plus Al Hadi raih juara <br />
+                  3 dalam turnamen volly ...
+                </div>
+                <div class="arrow-circle">
+                  <img src="img/icons/arrow-circle.svg" alt="arrow-circle" style="width: 24px; height: 24px" />
+                </div>
+              </div>
             </div>
 
-            <!-- Divider -->
-            <span class="divider">/</span>
+            <!-- Sosmed -->
+            <div class="hero-social">
+              <button>
+                <a href="#"><img src="img/icons/facebook.svg" alt="Facebook" style="width: 20px; height: 20px" /></a>
+              </button>
+              <button>
+                <a href="https://www.instagram.com/maplusalhadi" target="_blank"><img src="img/icons/instagram.svg" alt="Instagram" style="width: 20px; height: 20px" /></a>
+              </button>
+              <button>
+                <a href="https://www.youtube.com/@MaPlusAlHadiPadangan" target="_blank"><img src="img/icons/youtube.svg" alt="YouTube" style="width: 20px; height: 20px" /></a>
+              </button>
+              <button>
+                <a href="https://www.tiktok.com/@maplusalhadi" target="_blank"><img src="img/icons/tiktok.svg" alt="TikTok" style="width: 20px; height: 20px" /></a>
+              </button>
+            </div>
 
-            <!-- Total -->
-            <span class="total-number" x-text="getTotalNumber()"></span>
+            <!-- Deskripsi -->
+            <div class="hero-desc fw-medium">
+              Mendorong terbentuknya lembaga pendidikan sebagai pusat pembinaan <br />
+              generasi islami yang berakhlakul karimah dan berprestasi pada tingkat <br />
+              internasional
+            </div>
           </div>
-
-          <!-- News pill -->
-          <div class="news-pill">
-            <img src="img/hero/berita-voli.jpg" alt="" class="news-thumb" style="width: 160px; height: 100px" />
-            <div class="news-text fw-bold" style="letter-spacing: -2%;">
-              MA Plus Al Hadi raih juara <br />
-              3 dalam turnamen volly ...
-            </div>
-            <div class="arrow-circle">
-              <img src="img/icons/arrow-circle.svg" alt="arrow-circle" style="width: 24px; height: 24px;" />
-            </div>
-          </div>
         </div>
-
-        <!-- Sosmed -->
-        <div class="hero-social">
-          <button><a href="#"><img src="img/icons/facebook.svg" alt="Facebook" style="width: 20px; height: 20px" /></a></button>
-          <button><a href="https://www.instagram.com/maplusalhadi" target="_blank"><img src="img/icons/instagram.svg" alt="Instagram" style="width: 20px; height: 20px" /></a></button>
-          <button><a href="https://www.youtube.com/@MaPlusAlHadiPadangan" target="_blank"><img src="img/icons/youtube.svg" alt="YouTube" style="width: 20px; height: 20px" /></a></button>
-          <button><a href="https://www.tiktok.com/@maplusalhadi" target="_blank"><img src="img/icons/tiktok.svg" alt="TikTok" style="width: 20px; height: 20px" /></a></button>
-        </div>
-
-        <!-- Deskripsi -->
-        <div class="hero-desc fw-medium">
-          Mendorong terbentuknya lembaga pendidikan sebagai pusat pembinaan <br />
-          generasi islami yang berakhlakul karimah dan berprestasi pada tingkat <br />
-          internasional
-        </div>
-
       </div>
-    </div>
-  </div>
-</section>
-
-
+    </section>
 
     <section class="news-mobile d-block d-md-none py-4" style="background-color: #121416">
       <div class="custom-container">
@@ -350,7 +356,7 @@
             pada akhlak mulia, sehingga siswa dapat berkembang secara holistik—baik dalam ilmu pengetahuan maupun dalam akhlak dan moralitas.
           </p>
 
-          <a href="#" class="btn d-inline-flex align-items-center fw-semibold" style="letter-spacing: -2%; line-height: 140%;">
+          <a href="#" class="btn d-inline-flex align-items-center fw-semibold" style="letter-spacing: -2%; line-height: 140%">
             Baca selengkapnya
             <img src="img/icons/arrow-circle-right.svg" class="img-fluid" alt="arrow" style="height: 20px" />
           </a>
@@ -479,6 +485,10 @@
           <div class="text-center d-block d-md-none mt-3" style="margin-bottom: 40px">
             <a href="#" class="lihat-selengkapnya">Lihat selengkapnya</a>
           </div>
+
+          <!-- Tombol next/prev baru (khusus <1440px dan >768px) -->
+          <img src="img/icons/navigasi-fasilitas-left.png" alt="prev" class="icon-prev-new d-none img-fluid" />
+          <img src="img/icons/navigasi-fasilitas-right.svg" alt="next" class="icon-next-new d-none img-fluid" />
         </div>
       </div>
     </section>
@@ -546,8 +556,8 @@
               <img src="img/berita/berita-1.jpg" class="w-100 h-100 object-fit-cover card-potrait img-fluid" alt="cover" />
               <!-- Overlay -->
               <div class="position-absolute bottom-0 start-0 w-100 news-overlay text-white p-3">
-                <h3 class="h5 mb-2 fw-bold" style="color: #fcfcfd">Wisuda Angkatan ke-3 MA Plus Al Hadi Bojonegoro</h3>
-                <div class="d-flex align-items-center gap-2 news-item fw-normal" style="color: #e4e7ec;">
+                <h3 class="h5 mb-2 fw-bold news-title" style="color: #fcfcfd">Wisuda Angkatan ke-3 MA Plus Al Hadi Bojonegoro</h3>
+                <div class="d-flex align-items-center gap-2 news-item news-meta fw-normal" style="color: #e4e7ec">
                   <span>Kabar Al-Hadi</span>
                   <span>•</span>
                   <span>27 Juni, 2024</span>
@@ -561,8 +571,8 @@
             <article class="position-relative rounded-news overflow-hidden shadow-sm h-100">
               <img src="img/berita/berita-2.jpg" class="w-100 h-100 object-fit-cover card-landscape img-fluid" alt="" />
               <div class="position-absolute bottom-0 start-0 w-100 news-overlay text-white p-3">
-                <h3 class="h5 mb-2 fw-bold" style="color: #fcfcfd">Pelantikan Anggota OSIM Baru MA Plus Al Hadi</h3>
-                <div class="d-flex align-items-center gap-2 news-item fw-normal" style="color: #e4e7ec;">
+                <h3 class="h5 mb-2 fw-bold news-title" style="color: #fcfcfd">Pelantikan Anggota OSIM Baru MA Plus Al Hadi</h3>
+                <div class="d-flex align-items-center gap-2 news-item news-meta fw-normal" style="color: #e4e7ec">
                   <span>Kabar Al-Hadi</span>
                   <span>•</span>
                   <span>27 Juni, 2024</span>
@@ -573,8 +583,8 @@
             <article class="position-relative rounded-news overflow-hidden shadow-sm h-100">
               <img src="img/berita/berita-3.jpg" class="w-100 h-100 object-fit-cover card-landscape img-fluid" alt="" />
               <div class="position-absolute bottom-0 start-0 w-100 news-overlay text-white p-3">
-                <h3 class="h5 mb-2 fw-bold" style="color: #fcfcfd">Good public speaking, bermental pemimpin</h3>
-                <div class="d-flex align-items-center gap-2 news-item fw-normal" style="color: #e4e7ec;">
+                <h3 class="h5 mb-2 fw-bold news-title" style="color: #fcfcfd">Good public speaking, bermental pemimpin</h3>
+                <div class="d-flex align-items-center gap-2 news-item news-meta fw-normal" style="color: #e4e7ec">
                   <span>Prestasi</span>
                   <span>•</span>
                   <span>27 Juni, 2024</span>
@@ -585,7 +595,7 @@
 
           <!-- Kolom 3 -->
           <div class="col-12 col-lg-4">
-            <div class="d-flex flex-column gap-4">
+            <div class="d-flex flex-column gap-4 small-news">
               <a href="#" class="d-flex text-decoration-none text-dark">
                 <div class="flex-shrink-0" style="width: 120px">
                   <div class="ratio ratio-1x1">
@@ -594,8 +604,8 @@
                 </div>
                 <div class="flex-grow-1 ps-4 d-flex align-items-center">
                   <div>
-                    <h5 class="mb-2 fw-bold" style="color: #101828">Masa ta’aruf santri madrasah (MATSAMA) MA Plus Al Hadi Tahun...</h5>
-                    <div class="d-flex align-items-center gap-2 news-item fw-normal" style="color: #667085;">
+                    <h5 class="mb-2 fw-bold news-title" style="color: #101828">Masa ta’aruf santri madrasah (MATSAMA) MA Plus Al Hadi Tahun...</h5>
+                    <div class="d-flex align-items-center gap-2 news-item news-meta fw-normal" style="color: #667085">
                       <span>Kabar Al-Hadi</span>
                       <span>•</span>
                       <span>27 Juni, 2024</span>
@@ -612,8 +622,8 @@
                 </div>
                 <div class="flex-grow-1 ps-4 d-flex align-items-center">
                   <div>
-                    <h5 class="mb-2 fw-bold" style="color: #101828">Good Public Speaking, bermental pemimpin</h5>
-                    <div class="d-flex align-items-center gap-2 news-item fw-normal" style="color: #667085;">
+                    <h5 class="mb-2 fw-bold news-title" style="color: #101828">Good Public Speaking, bermental pemimpin</h5>
+                    <div class="d-flex align-items-center gap-2 news-item news-meta fw-normal" style="color: #667085">
                       <span>Kabar Al-Hadi</span>
                       <span>•</span>
                       <span>27 Juni, 2024</span>
@@ -630,8 +640,8 @@
                 </div>
                 <div class="flex-grow-1 ps-4 d-flex align-items-center">
                   <div>
-                    <h5 class="mb-2 fw-bold" style="color: #101828">Tim Futsal Putra Juara 2 turnamen Futsal PAC NU Padangan</h5>
-                    <div class="d-flex align-items-center gap-2 news-item fw-normal" style="color: #667085;">
+                    <h5 class="mb-2 fw-bold news-title" style="color: #101828">Tim Futsal Putra Juara 2 turnamen Futsal PAC NU Padangan</h5>
+                    <div class="d-flex align-items-center gap-2 news-item news-meta fw-normal" style="color: #667085">
                       <span>Kabar Al-Hadi</span>
                       <span>•</span>
                       <span>27 Juni, 2024</span>
@@ -648,8 +658,8 @@
                 </div>
                 <div class="flex-grow-1 ps-4 d-flex align-items-center">
                   <div>
-                    <h5 class="mb-2 fw-bold" style="color: #101828">MA Plus Al Hadi Juara 2 Catur PORSENI Tingkat Kabupaten</h5>
-                    <div class="d-flex align-items-center gap-2 news-item fw-normal" style="color: #667085;">
+                    <h5 class="mb-2 fw-bold news-title" style="color: #101828">MA Plus Al Hadi Juara 2 Catur PORSENI Tingkat Kabupaten</h5>
+                    <div class="d-flex align-items-center gap-2 news-item news-meta fw-normal" style="color: #667085">
                       <span>Kabar Al-Hadi</span>
                       <span>•</span>
                       <span>27 Juni, 2024</span>
@@ -667,12 +677,12 @@
     <section class="custom-container custom-container-2">
       <div class="cta-section">
         <div class="cta-content">
-          <div class="cta-badge mb-2 fw-bold" style="line-height: 140%;">PPDB</div>
-          <h1 class="cta-title mb-3 fw-bold" style="line-height: 120%; letter-spacing: 0%;">Jadi Santri MA Plus Al Hadi Sekarang Juga!</h1>
-          <p class="cta-description mb-0 fw-normal" style="line-height: 140%; letter-spacing: -2%;">Membangun generasi unggul, mandiri dan berakhlakul karimah</p>
+          <div class="cta-badge mb-2 fw-bold" style="line-height: 140%">PPDB</div>
+          <h1 class="cta-title mb-3 fw-bold" style="line-height: 120%; letter-spacing: 0%">Jadi Santri MA Plus Al Hadi Sekarang Juga!</h1>
+          <p class="cta-description mb-0 fw-normal" style="line-height: 140%; letter-spacing: -2%">Membangun generasi unggul, mandiri dan berakhlakul karimah</p>
         </div>
         <div class="cta-action">
-          <a href="#" class="cta-button fw-bold" style="line-height: 120%; letter-spacing: -2%;">Daftar Sekarang</a>
+          <a href="#" class="cta-button fw-bold" style="line-height: 120%; letter-spacing: -2%">Daftar Sekarang</a>
         </div>
       </div>
     </section>
@@ -704,7 +714,7 @@
           <!-- Kanan -->
           <div class="footer-right">
             <p class="footer-info-text fw-medium">For more information</p>
-            <a href="https://wa.me/6286749382398" class="footer-btn fw-bold" style="line-height: 120%; letter-spacing: -2%;">
+            <a href="https://wa.me/6286749382398" class="footer-btn fw-bold" style="line-height: 120%; letter-spacing: -2%">
               <img src="img/icons/whatsapp.svg" alt="WhatsApp" class="icon-wa img-fluid" />
               Kontak Kami
             </a>
@@ -787,10 +797,12 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const track = document.querySelector(".fasilitas-track");
-        const btnNext = document.querySelector(".icon-next"); // desktop next
-        const btnPrev = document.querySelector(".icon-prev"); // desktop prev
-        const btnNextM = document.querySelector(".icon-next-m"); // mobile next
-        const btnPrevM = document.querySelector(".icon-prev-m"); // mobile prev
+        const btnNext = document.querySelector(".icon-next"); // desktop next (≥1440)
+        const btnPrev = document.querySelector(".icon-prev"); // desktop prev (≥1440)
+        const btnNextM = document.querySelector(".icon-next-m"); // mobile next (<768)
+        const btnPrevM = document.querySelector(".icon-prev-m"); // mobile prev (<768)
+        const btnNextNew = document.querySelector(".icon-next-new"); // tablet next (992–1439)
+        const btnPrevNew = document.querySelector(".icon-prev-new"); // tablet prev (992–1439)
 
         const cards = document.querySelectorAll(".fasilitas-card");
         if (!track || cards.length === 0) return;
@@ -798,19 +810,39 @@
         let position = 0;
 
         // ukuran card
-        const cardWidth = 378.67 + 32; // desktop: width + gap
-        const cardWidthMobile = 268.83 + 22.72; // mobile: width + gap
-        const visibleCards = 3; // desktop
+        const cardWidth = 378.67 + 32; // width + gap untuk desktop/tablet
+        const cardWidthMobile = 268.83 + 22.72; // width + gap untuk mobile
         const totalCards = cards.length;
+
+        // fungsi update posisi track
+        function updateTrack() {
+          track.style.transform = `translateX(${position}px)`;
+        }
+
+        // fungsi untuk mengecek apakah di tablet range (992px - 1439px)
+        function isTabletRange() {
+          return window.innerWidth >= 992 && window.innerWidth <= 1439;
+        }
+
+        // fungsi untuk show/hide button prev new
+        function togglePrevNewButton() {
+          if (!btnPrevNew || !isTabletRange()) return;
+
+          if (position < 0) {
+            btnPrevNew.classList.add("show");
+          } else {
+            btnPrevNew.classList.remove("show");
+          }
+        }
 
         // --- DESKTOP NEXT (geser 3 card) ---
         if (btnNext) {
           btnNext.addEventListener("click", () => {
-            const maxShift = -(cardWidth * (totalCards - visibleCards));
+            const maxShift = -(cardWidth * (totalCards - 3)); // 3 card penuh di desktop
             if (position > maxShift) {
               position -= cardWidth * 3;
               if (position < maxShift) position = maxShift;
-              track.style.transform = `translateX(${position}px)`;
+              updateTrack();
             }
           });
         }
@@ -821,7 +853,7 @@
             if (position < 0) {
               position += cardWidth * 3;
               if (position > 0) position = 0;
-              track.style.transform = `translateX(${position}px)`;
+              updateTrack();
             }
           });
         }
@@ -833,10 +865,8 @@
             if (position > maxShift) {
               position -= cardWidthMobile;
               if (position < maxShift) position = maxShift;
-              track.style.transform = `translateX(${position}px)`;
+              updateTrack();
             }
-
-            // munculkan tombol prev kalau sudah geser
             if (position < 0 && btnPrevM) {
               btnPrevM.classList.remove("d-none");
             }
@@ -849,15 +879,53 @@
             if (position < 0) {
               position += cardWidthMobile;
               if (position > 0) position = 0;
-              track.style.transform = `translateX(${position}px)`;
+              updateTrack();
             }
-
-            // sembunyikan lagi kalau sudah balik ke card pertama
             if (position === 0) {
               btnPrevM.classList.add("d-none");
             }
           });
         }
+
+        // --- TABLET NEXT (geser 1 card, snap agar card terakhir penuh) ---
+        if (btnNextNew) {
+          btnNextNew.addEventListener("click", () => {
+            const maxShift = -(cardWidth * (totalCards - 2)); // 2 card penuh di tablet
+            if (position > maxShift) {
+              if (position - cardWidth > maxShift) {
+                position -= cardWidth; // geser normal
+              } else {
+                position = maxShift; // snap ke ujung biar card terakhir full
+              }
+              updateTrack();
+
+              // Toggle button prev new untuk tablet range
+              togglePrevNewButton();
+            }
+          });
+        }
+
+        // --- TABLET PREV (geser 1 card) ---
+        if (btnPrevNew) {
+          btnPrevNew.addEventListener("click", () => {
+            if (position < 0) {
+              position += cardWidth;
+              if (position > 0) position = 0;
+              updateTrack();
+
+              // Toggle button prev new untuk tablet range
+              togglePrevNewButton();
+            }
+          });
+        }
+
+        // reset posisi ketika resize (biar sesuai layout baru)
+        window.addEventListener("resize", () => {
+          position = 0;
+          updateTrack();
+          if (btnPrevM) btnPrevM.classList.add("d-none");
+          if (btnPrevNew) btnPrevNew.classList.remove("show");
+        });
       });
     </script>
 

@@ -183,6 +183,8 @@ body {
   background: #fff;
   display: none;
   z-index: 9999;
+  overflow-y: auto; /* aktifkan scroll vertikal */
+  -webkit-overflow-scrolling: touch; /* biar halus di mobile */
 }
 
 .menu-container {
@@ -208,7 +210,8 @@ body {
 }
 
 .menu-item {
-  font-size: 80px;
+  font-size: clamp(48px, 6vw, 80px);
+
   /* font-weight: 400; */
   margin-bottom: 16px;
   cursor: pointer;
@@ -227,14 +230,16 @@ body {
   list-style: none;
   margin-top: 16px;
   padding-left: 0;
-  font-size: 20px;
+  font-size: clamp(14px, 1.2vw, 20px);
+
   /* font-weight: bold; */
   display: none;
 }
 
 .menu-item.active .submenu {
   display: flex;
-  gap: 40px;
+  gap: clamp(20px, 2.5vw, 40px);
+
   flex-wrap: wrap;
 }
 
@@ -422,7 +427,8 @@ body {
   margin: 0;
   /* font-weight: 700; ini gabisa */
   line-height: 1.15;
-  font-size: 64px;
+  font-size: clamp(36px, 4.5vw, 64px);
+
   margin-top: 466px;
 }
 
@@ -539,8 +545,9 @@ body {
 }
 
 .news-thumb {
-  width: 44px;
-  height: 44px;
+  width: clamp(100px, 15vw, 160px);
+  height: clamp(60px, 8vw, 100px);
+
   border-radius: 100px;
   margin-top: 16.5px;
   margin-bottom: 16.5px;
@@ -582,7 +589,8 @@ body {
 }
 
 #about p {
-  font-size: 20px;
+  font-size: clamp(16px, 1.4vw, 20px);
+
   margin-bottom: 24px;
 }
 
@@ -620,15 +628,16 @@ body {
 }
 
 #core-value img {
-  margin-right: 46.38px;
-  width: 253.62px;
+  margin-right: clamp(20px, 3vw, 46.38px);
+  width: clamp(150px, 18vw, 253.62px);
 }
 
 #core-value button {
-  font-size: 32px;
+  font-size: clamp(24px, 2vw, 32px);
+
   border: 2px solid #667085;
   /* font-weight: 700; */
-  padding: 24px 44px;
+  padding: clamp(16px, 2vw, 24px) clamp(28px, 3vw, 44px);
 }
 
 .buttons {
@@ -716,6 +725,11 @@ body {
   cursor: pointer;
 }
 
+.icon-prev-new,
+.icon-next-new {
+  display: none;
+}
+
 /* Program */
 .program-section {
   padding-top: 80px;
@@ -737,8 +751,9 @@ body {
 }
 
 .program-img {
-  width: 500px;
-  height: 120px;
+  width: clamp(280px, 40vw, 500px);
+  height: clamp(70px, 10vw, 120px);
+
   border-radius: 100px;
   object-fit: cover;
   flex-shrink: 0;
@@ -758,8 +773,9 @@ body {
 }
 
 .btn-program {
-  width: 46.67px;
-  height: 46.67px;
+  width: clamp(28px, 3.2vw, 46.67px);
+  height: clamp(28px, 3.2vw, 46.67px);
+
   border-radius: 50%;
   border: none;
   background-color: rgba(102, 112, 133, 0.4);
@@ -782,8 +798,8 @@ body {
 }
 
 .program-arrow {
-  width: 19.83px !important;
-  height: 17.49px;
+  width: clamp(12px, 1.5vw, 19.83px);
+  height: clamp(10px, 1.2vw, 17.49px);
 }
 
 /* Berita */
@@ -811,8 +827,22 @@ body {
   z-index: 1;
 }
 
+.news-title {
+  font-size: clamp(15px, 1.3vw, 20px);
+  color: #fcfcfd;
+}
+
+.news-meta {
+  font-size: clamp(13px, 0.9vw, 16px);
+  color: #e4e7ec;
+}
+
 .rounded-news {
   border-radius: 16px;
+}
+
+.card-landscape {
+  height: 264px !important;
 }
 
 /* CTA */
@@ -854,20 +884,20 @@ body {
 
 .cta-badge {
   /* font-weight: 700; */
-  font-size: 16px;
+  font-size: clamp(14px, 1vw, 16px);
   color: #ffdb80;
   display: inline-block;
 }
 
 .cta-title {
   /* font-weight: 700; */
-  font-size: 48px;
+  font-size: clamp(28px, 3vw, 48px);
   line-height: 1.2;
 }
 
 .cta-description {
   /* font-weight: 400; */
-  font-size: 20px;
+  font-size: clamp(14px, 1.2vw, 20px);
   color: #e7f8f0;
 }
 
@@ -880,9 +910,9 @@ body {
   background: #ffdb80;
   color: #121416;
   border: none;
-  padding: 16px 40px;
+  padding: clamp(12px, 1.5vw, 16px) clamp(24px, 3vw, 40px);
   border-radius: 12px;
-  font-size: 20px;
+  font-size: clamp(14px, 1.2vw, 20px);
   text-decoration: none;
   display: inline-block;
 }
@@ -1040,12 +1070,34 @@ body {
   }
 
   /* Fasilitas */
-  .icon-next {
-    display: none !important;
+  /* .fasilitas-wrapper {
+    position: relative; 
+  } */
+
+  .icon-next-new {
+    display: block !important;
+    /* Tambahkan styling positioning sesuai kebutuhan */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
   }
 
-  .icon-prev {
+  .icon-prev-new {
+    /* Default tetap hidden, akan dimunculkan via JavaScript */
     display: none !important;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .icon-prev-new.show {
+    display: block !important;
   }
 
   .fasilitas-wrapper {
@@ -1061,7 +1113,29 @@ body {
   .fasilitas-wrapper::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Edge baru */
   }
-  
+
+  /* .icon-prev-new,
+  .icon-next-new {
+    display: block !important;
+  } */
+
+  /* .icon-prev-new {
+    display: none !important;
+  } */
+
+  /* Sembunyikan tombol versi default di dalam card */
+  .fasilitas-card .icon-next,
+  .fasilitas-card .icon-prev {
+    display: none !important;
+  }
+
+  .flex-shrink-0 {
+    width: 100px !important; /* contoh lebih kecil */
+  }
+
+  .card-landscape {
+    height: 224px !important;
+  }
 }
 
 /* Tablet */
@@ -1673,6 +1747,7 @@ body {
 
   .footer-logo {
     width: 200px;
+    height: 50.75px;
     margin-bottom: 40px;
   }
 
