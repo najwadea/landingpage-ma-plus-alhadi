@@ -551,7 +551,7 @@
 
         <div class="row g-4">
           <!-- Kolom 1 -->
-          <div class="col-12 col-lg-4">
+          <div class="col-12 col-lg-4 col-md-6">
             <article class="position-relative rounded-news overflow-hidden shadow-sm h-100">
               <img src="img/berita/berita-1.jpg" class="w-100 h-100 object-fit-cover card-potrait img-fluid" alt="cover" />
               <!-- Overlay -->
@@ -567,7 +567,7 @@
           </div>
 
           <!-- Kolom 2 -->
-          <div class="col-12 col-lg-4 d-grid gap-4">
+          <div class="col-12 col-lg-4 col-md-6 d-grid gap-4">
             <article class="position-relative rounded-news overflow-hidden shadow-sm h-100">
               <img src="img/berita/berita-2.jpg" class="w-100 h-100 object-fit-cover card-landscape img-fluid" alt="" />
               <div class="position-absolute bottom-0 start-0 w-100 news-overlay text-white p-3">
@@ -595,78 +595,91 @@
 
           <!-- Kolom 3 -->
           <div class="col-12 col-lg-4">
-            <div class="d-flex flex-column gap-4 small-news">
-              <a href="#" class="d-flex text-decoration-none text-dark">
-                <div class="flex-shrink-0" style="width: 120px">
-                  <div class="ratio ratio-1x1">
-                    <img src="img/berita/berita-4.jpg" class="w-100 h-100 rounded-news object-fit-cover img-fluid" alt="" />
-                  </div>
-                </div>
-                <div class="flex-grow-1 ps-4 d-flex align-items-center">
-                  <div>
-                    <h5 class="mb-2 fw-bold news-title" style="color: #101828">Masa ta’aruf santri madrasah (MATSAMA) MA Plus Al Hadi Tahun...</h5>
-                    <div class="d-flex align-items-center gap-2 news-item news-meta fw-normal" style="color: #667085">
-                      <span>Kabar Al-Hadi</span>
-                      <span>•</span>
-                      <span>27 Juni, 2024</span>
+            <!-- atur grid kecil: tablet = 2 kolom, desktop = 1 kolom -->
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-1 g-4">
+              <!-- Card 1 -->
+              <div class="col">
+                <a href="#" class="d-flex text-decoration-none text-dark">
+                  <div class="flex-shrink-0" style="width: 120px">
+                    <div class="ratio ratio-1x1">
+                      <img src="img/berita/berita-4.jpg" class="w-100 h-100 rounded-news object-fit-cover img-fluid" alt="" />
                     </div>
                   </div>
-                </div>
-              </a>
+                  <div class="flex-grow-1 ps-4 d-flex align-items-center">
+                    <div>
+                      <h5 class="mb-2 fw-bold news-title" style="color: #101828">Masa ta’aruf santri madrasah (MATSAMA) MA Plus Al Hadi Tahun...</h5>
+                      <div class="d-flex align-items-center gap-2 news-meta fw-normal" style="color: #667085">
+                        <span>Kabar Al-Hadi</span>
+                        <span>•</span>
+                        <span>27 Juni, 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
 
-              <a href="#" class="d-flex text-decoration-none text-dark">
-                <div class="flex-shrink-0" style="width: 120px">
-                  <div class="ratio ratio-1x1">
-                    <img src="img/berita/berita-5.jpg" class="w-100 h-100 rounded-news object-fit-cover img-fluid" alt="" />
-                  </div>
-                </div>
-                <div class="flex-grow-1 ps-4 d-flex align-items-center">
-                  <div>
-                    <h5 class="mb-2 fw-bold news-title" style="color: #101828">Good Public Speaking, bermental pemimpin</h5>
-                    <div class="d-flex align-items-center gap-2 news-item news-meta fw-normal" style="color: #667085">
-                      <span>Kabar Al-Hadi</span>
-                      <span>•</span>
-                      <span>27 Juni, 2024</span>
+              <!-- Card 2 -->
+              <div class="col">
+                <a href="#" class="d-flex text-decoration-none text-dark">
+                  <div class="flex-shrink-0" style="width: 120px">
+                    <div class="ratio ratio-1x1">
+                      <img src="img/berita/berita-5.jpg" class="w-100 h-100 rounded-news object-fit-cover img-fluid" alt="" />
                     </div>
                   </div>
-                </div>
-              </a>
+                  <div class="flex-grow-1 ps-4 d-flex align-items-center">
+                    <div>
+                      <h5 class="mb-2 fw-bold news-title" style="color: #101828">Good Public Speaking, bermental pemimpin</h5>
+                      <div class="d-flex align-items-center gap-2 news-meta fw-normal" style="color: #667085">
+                        <span>Kabar Al-Hadi</span>
+                        <span>•</span>
+                        <span>27 Juni, 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
 
-              <a href="#" class="d-flex text-decoration-none text-dark">
-                <div class="flex-shrink-0" style="width: 120px">
-                  <div class="ratio ratio-1x1">
-                    <img src="img/berita/berita-6.jpg" class="w-100 h-100 rounded-news object-fit-cover img-fluid" alt="" />
-                  </div>
-                </div>
-                <div class="flex-grow-1 ps-4 d-flex align-items-center">
-                  <div>
-                    <h5 class="mb-2 fw-bold news-title" style="color: #101828">Tim Futsal Putra Juara 2 turnamen Futsal PAC NU Padangan</h5>
-                    <div class="d-flex align-items-center gap-2 news-item news-meta fw-normal" style="color: #667085">
-                      <span>Kabar Al-Hadi</span>
-                      <span>•</span>
-                      <span>27 Juni, 2024</span>
+              <!-- Card 3 -->
+              <div class="col">
+                <a href="#" class="d-flex text-decoration-none text-dark">
+                  <div class="flex-shrink-0" style="width: 120px">
+                    <div class="ratio ratio-1x1">
+                      <img src="img/berita/berita-6.jpg" class="w-100 h-100 rounded-news object-fit-cover img-fluid" alt="" />
                     </div>
                   </div>
-                </div>
-              </a>
+                  <div class="flex-grow-1 ps-4 d-flex align-items-center">
+                    <div>
+                      <h5 class="mb-2 fw-bold news-title" style="color: #101828">Tim Futsal Putra Juara 2 turnamen Futsal PAC NU Padangan</h5>
+                      <div class="d-flex align-items-center gap-2 news-meta fw-normal" style="color: #667085">
+                        <span>Kabar Al-Hadi</span>
+                        <span>•</span>
+                        <span>27 Juni, 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
 
-              <a href="#" class="d-flex text-decoration-none text-dark">
-                <div class="flex-shrink-0" style="width: 120px">
-                  <div class="ratio ratio-1x1">
-                    <img src="img/berita/berita-7.jpg" class="w-100 h-100 rounded-news object-fit-cover img-fluid" alt="" />
-                  </div>
-                </div>
-                <div class="flex-grow-1 ps-4 d-flex align-items-center">
-                  <div>
-                    <h5 class="mb-2 fw-bold news-title" style="color: #101828">MA Plus Al Hadi Juara 2 Catur PORSENI Tingkat Kabupaten</h5>
-                    <div class="d-flex align-items-center gap-2 news-item news-meta fw-normal" style="color: #667085">
-                      <span>Kabar Al-Hadi</span>
-                      <span>•</span>
-                      <span>27 Juni, 2024</span>
+              <!-- Card 4 -->
+              <div class="col">
+                <a href="#" class="d-flex text-decoration-none text-dark">
+                  <div class="flex-shrink-0" style="width: 120px">
+                    <div class="ratio ratio-1x1">
+                      <img src="img/berita/berita-7.jpg" class="w-100 h-100 rounded-news object-fit-cover img-fluid" alt="" />
                     </div>
                   </div>
-                </div>
-              </a>
+                  <div class="flex-grow-1 ps-4 d-flex align-items-center">
+                    <div>
+                      <h5 class="mb-2 fw-bold news-title" style="color: #101828">MA Plus Al Hadi Juara 2 Catur PORSENI Tingkat Kabupaten</h5>
+                      <div class="d-flex align-items-center gap-2 news-meta fw-normal" style="color: #667085">
+                        <span>Kabar Al-Hadi</span>
+                        <span>•</span>
+                        <span>27 Juni, 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -801,8 +814,8 @@
         const btnPrev = document.querySelector(".icon-prev"); // desktop prev (≥1440)
         const btnNextM = document.querySelector(".icon-next-m"); // mobile next (<768)
         const btnPrevM = document.querySelector(".icon-prev-m"); // mobile prev (<768)
-        const btnNextNew = document.querySelector(".icon-next-new"); // tablet next (992–1439)
-        const btnPrevNew = document.querySelector(".icon-prev-new"); // tablet prev (992–1439)
+        const btnNextNew = document.querySelector(".icon-next-new"); // tablet next (768-1439)
+        const btnPrevNew = document.querySelector(".icon-prev-new"); // tablet prev (768-1439)
 
         const cards = document.querySelectorAll(".fasilitas-card");
         if (!track || cards.length === 0) return;
@@ -819,9 +832,9 @@
           track.style.transform = `translateX(${position}px)`;
         }
 
-        // fungsi untuk mengecek apakah di tablet range (992px - 1439px)
+        // fungsi untuk mengecek apakah di tablet range (768px - 1439px)
         function isTabletRange() {
-          return window.innerWidth >= 992 && window.innerWidth <= 1439;
+          return window.innerWidth >= 768 && window.innerWidth <= 1439;
         }
 
         // fungsi untuk show/hide button prev new

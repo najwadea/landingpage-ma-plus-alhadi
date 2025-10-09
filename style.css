@@ -230,7 +230,7 @@ body {
   list-style: none;
   margin-top: 16px;
   padding-left: 0;
-  font-size: clamp(14px, 1.2vw, 20px);
+  font-size: clamp(14px, 1.5vw, 20px);
 
   /* font-weight: bold; */
   display: none;
@@ -557,6 +557,9 @@ body {
 
 .news-text {
   font-size: 20px;
+  line-height: 140%;
+  /* padding-top: 16px;
+  padding-bottom: 16px; */
   color: #000;
   white-space: nowrap;
   overflow: hidden;
@@ -1140,6 +1143,40 @@ body {
 
 /* Tablet */
 @media (min-width: 768px) and (max-width: 991px) {
+  /* MenuOverlay */
+  .menu-container {
+    grid-template-columns: 52% 48% !important; /* Left lebih dominan */
+  }
+
+  .menu-list {
+    margin-top: 170px !important;
+  }
+
+  .info-block {
+    margin-top: 200px !important;
+  }
+
+  .info-label {
+    /* font-weight: 500; */
+    color: #f1d9b9;
+  }
+
+  .info-text {
+    color: #fff;
+    line-height: 1.6;
+    margin-left: 0;
+  }
+
+  .button-ppdb {
+    width: 100%; /* tombol full */
+    display: flex; /* gunakan flex */
+    justify-content: center; /* teks di tengah horizontal */
+    align-items: center; /* teks di tengah vertical */
+    text-align: center; /* jaga-jaga kalau bukan flex */
+    margin-bottom: 119px !important;
+  }
+
+  /* Footer */
   .footer-left {
     flex: 1 1 55%;
     max-width: 55%;
@@ -1155,18 +1192,57 @@ body {
     height: 100%;
   }
 
-  .fasilitas-wrapper {
+  /* .fasilitas-wrapper {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch; /* biar smooth di iOS */
+    -webkit-overflow-scrolling: touch; 
 
-    /* sembunyikan scrollbar */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE & Edge lama */
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
   }
 
   .fasilitas-wrapper::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Edge baru */
+    display: none;
+  } */
+
+  /* Hero */
+  .hero-desc br{
+
+  }
+
+  /* Barita */
+  .card-potrait {
+    aspect-ratio: 3 / 4; /* portrait */
+  }
+
+  .card-landscape {
+    aspect-ratio: 16 / 9; /* landscape */
+  }
+
+  /* Fasilitas */
+  .icon-next-new {
+    display: block !important;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .icon-prev-new {
+    display: none !important; /* tetap hidden dulu */
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  /* saat JS menambahkan class .show, munculkan prev */
+  .icon-prev-new.show {
+    display: block !important;
   }
 
   .icon-next {
