@@ -1207,7 +1207,7 @@ body {
 
   /* Hero */
   .hero-desc br{
-
+    display: none;
   }
 
   /* Barita */
@@ -1449,6 +1449,10 @@ body {
 
   .slide-number {
     font-size: 16px;
+  }
+
+   .number-container {
+    width: 14px !important; /* hilangkan lebar tetap */
   }
 
   .hero-title {
